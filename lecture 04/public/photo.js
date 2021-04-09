@@ -1,11 +1,17 @@
 // define a class Picture with its constructor
 // make the current file a module
+/**
+ * @param {string} poiname - the name of the point of interest
+ * @param {string} cityname - the city shown on the picture
+ * @param {string} link - the url showing to the picture
+ * 
+ */
 export default class Picture {
 
-    constructor (poi, city, link)   
+    constructor (poinamepoi, cityname, link)   
     {
-     this.poi = poi
-     this.city = city
+     this.poiname = poiname
+     this.cityname = cityname
      this.link = link
     }
 

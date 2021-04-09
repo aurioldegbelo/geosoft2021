@@ -1,6 +1,6 @@
 // a simple express server
 const express = require('express')
-const port = 3000
+const port = 4000
 const app = express()
 
 console.clear()
