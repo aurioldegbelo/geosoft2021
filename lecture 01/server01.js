@@ -1,3 +1,5 @@
+// http server to illustrate the rendering of html files
+// (Note: if modules are used, an express server would be more appropriate)
 const http = require('http')
 const fs = require ('fs')
 const port = 3000
