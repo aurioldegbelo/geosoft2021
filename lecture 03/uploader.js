@@ -1,3 +1,5 @@
+'use strict'
+
 var uploaddiv = document.getElementById("uploadform")
 var picturesdiv = document.getElementById("pictures")
 var uploadfield = document.getElementById("uploadfield")
@@ -20,9 +22,14 @@ uploadfield.addEventListener('change', function(){
     
     // event listener, if the reader has read the file
     reader.addEventListener('load', function() {
+        
         var result = JSON.parse(reader.result); // parse the result into a JSON object (no error checking at this point) 
+        
+        let n = countPictures(result)
+        console.log(`The number of pictures is ${n}`)
+
         showPictures(result)
-        //console.log(result)
+
     })
     }  
 
@@ -52,4 +59,15 @@ function showPictures(result)
         document.getElementById(key).href = element.properties.link
     }
 
+}
+
+
+/**
+ * 
+ * @param {JSON} result - the list of results to count 
+ * @returns {number} - the number of pictures (as the length of the array)
+ */
+function countPictures(result)
+{
+    return result.features.length
 }
