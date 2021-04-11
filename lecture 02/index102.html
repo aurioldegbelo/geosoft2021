@@ -12,24 +12,32 @@
     <script>
     
     let a = 10, b = 15
-    const c = a+b
-    // const c  = ["e", "f", "g", "h"]
-    //const c =  {name: 'Mercedes', color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}}
+    const c  = ["e", "f", "g", "h"]
+    const d =  {name: 'Mercedes', color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}}
 
-    console.log(c)
-    console.info("info:", c)
+    
+    // Template strings or literals are string literals allowing embedded expressions
+    console.log(`The value of a+b is ${a+b}`)
+
+    console.dir(c) // properties of object
+    console.info("info: ", c)
     console.warn("warn:", c)
     console.error("error:", c)
 
-    console.dir(c) // no string substitution
-    console.table(c) // no string substitution
+    debugger
 
-    /* // timer
+    console.log("The value of c is %o", c) // string substitution
+    console.dir("The value of c is %o", c) // no string substitution
+    console.table(c) // no string substitution
+    console.table(`The value of d is ${d}`) 
+  
+    // timer
     console.time("alert - timer")
     alert ("this is my first message")
     console.timeLog("alert - timer") // time elapsed since the timer has started
     alert ("this is my second message")
     console.timeEnd("alert - timer")
+    /*
     */
    
     </script>
