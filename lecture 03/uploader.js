@@ -48,7 +48,7 @@ function showPictures(result)
     picturesdiv.style.display = "block"
     let pictures = result.features
     let i = 0
-    for (const element of pictures) 
+    for (const element of pictures)  // for ... of
     {
         console.log(element)
         i++    
