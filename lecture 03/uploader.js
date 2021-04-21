@@ -53,7 +53,7 @@ function showPictures(result)
         console.log(element)
         i++    
         let key = `pic${i}`
-        console.log(key)
+       // console.log(key)
         // dom manipulation
         document.getElementById(key).innerText = `${element.properties.poiname}, ${element.properties.cityname}`
         document.getElementById(key).href = element.properties.link

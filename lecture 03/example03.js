@@ -48,7 +48,7 @@ let cast = function ()
     console.log("End of the podcast") 
 }
 pod(cast)
-
+/*
 var executeSomething = function ()  // var/let functionExpressionName 
 {
     console.log("function expression") // statements
@@ -65,7 +65,8 @@ console.dir(executeSomething)
 console.dir(executeSomething2)
 
 executeSomething2()
-//setTimeout(pod(cast), 5000)
+*/
+setTimeout(pod(cast), 5000)
 
 
 /*
