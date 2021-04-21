@@ -5,7 +5,7 @@
     "geometry": {"type": "Point", "coordinates": [7.628056, 51.962222]},
     "properties": {
       "poiname": "Prinzipalmarkt",
-         "cityname": "Münster", 
+      "cityname": "Münster", 
       "link": "https://flic.kr/p/4kbwjN" }
   },
   { "type": "Feature",

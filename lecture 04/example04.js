@@ -32,3 +32,12 @@ for (let e in array)
 }
 process.stdout.write("\n")
 */
+
+console.dir(window.navigator);
+
+console.log(window.screenX + ", " + window.screenY);
+console.log(window.innerWidth + ", " + window.innerHeight);
+
+console.dir(window.history);
+
+window.history.back(); // haha

@@ -1,8 +1,8 @@
 'use strict'
 
-var uploaddiv = document.getElementById("uploadform")
-var picturesdiv = document.getElementById("pictures")
-var uploadfield = document.getElementById("uploadfield")
+let uploaddiv = document.getElementById("uploadform")
+let picturesdiv = document.getElementById("pictures")
+let uploadfield = document.getElementById("uploadfield")
 
 /**
  * 

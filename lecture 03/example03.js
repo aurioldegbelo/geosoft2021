@@ -1,5 +1,8 @@
 "use strict"
+// list of snippets incorporated in the podcast for the lecture
+// to test yourself, copy paste from here or the slides
 
+/*
 //let a = 5, b = 10
 
 //console.log(anonymousFunction(a,b)) 
@@ -32,24 +35,40 @@ let namedFunction2 = () => "I am now an arrow function"
 console.log(anonymousFunction2(a,b))
 console.log(namedFunction2())
 console.log(namedF(a))
-
+*/
 
 let pod = function (examplefunction)
 {
     console.log(examplefunction)
     examplefunction()
-   // return afunction
 }
 
 let cast = function ()
 {
     console.log("End of the podcast") 
 }
-
 pod(cast)
 
+var executeSomething = function ()  // var/let functionExpressionName 
+{
+    console.log("function expression") // statements
+}
+
+// Funktionsausdrücke ohne Name
+var executeSomething2 = function namedFunction()
+{
+    console.log("function expression with name")
+}
+
+
+console.dir(executeSomething)
+console.dir(executeSomething2)
+
+executeSomething2()
 //setTimeout(pod(cast), 5000)
 
+
+/*
 // Funktionsdeklaration
 function doSomething()  // function FunctionName()
 {
@@ -87,9 +106,10 @@ function Sum (a, b)
 
 /* let c = Sum (a, b)
 console.log(c)
-console.log(Sum (a,b)) */
+console.log(Sum (a,b))
 
 
+// functions as parameters
 function a()
 {
     console.log("foo")
@@ -100,10 +120,10 @@ function b(f)
     f()
 }
   
-b(a) // b runs function a
+b(a) // b runs function a [synchronous callback]
 b(() => console.log("bar")) // b runs anonymous arrow
   
-
+// asynchronous callback
 function cb()
 {
     console.log("cb was called back")
@@ -111,6 +131,8 @@ function cb()
 
 setTimeout(cb, 5000) // cb, not cb()
 
+
+// spread
 let array1 = [1, 2, 3, 4]
 let array2 = [5, 6, 7, 8]
 let combined = array1.concat(array2)
@@ -128,6 +150,7 @@ console.log(Sum(1,2,3,4,5)) // 10
 
 var icombined = array2.concat(array1)
 
+// rest parameters
 function sumFlexible ()
 {
     let input = Array.from(arguments)
@@ -147,3 +170,52 @@ sumFlexible(1, 2) // console.log(sumFlexible(1, 2))
 sumFlexible(1, 2, 3) // console.log(sumFlexible(1, 2, 3))
 sumFlexible(...array1) // console.log(sumFlexible(...array1))
 
+// JSON functions parse and stringify
+//let pictureString = '{"poiname": "Antiquarium", "cityname": "München",  "link": "https://flic.kr/p/2axWda3"}'
+
+//picture = JSON.parse(pictureString)
+
+//console.log(picture.poiname) // Antiquarium
+//console.log(picture.cityname) // München
+//console.log(picture.link) // https://flic.kr/p/2axWda3
+
+let picture = {
+    poiname: 'Antiquarium',
+    cityname: 'München',
+    link: 'https://flic.kr/p/2axWda3'
+  }
+
+let pictureString = JSON.stringify(picture)
+console.log(pictureString)
+// {"poiname":"Antiquarium","cityname":"München","link":"https://flic.kr/p/2axWda3"}
+console.log(pictureString.length) // 81
+
+var str = '{"poiname":"Antiquarium","cityname":"München",   "link":"https://flic.kr/p/2axWda3"}'
+console.log(str.length)
+ */
+
+
+/* Event listener traditional and new
+let element = document.getElementById("testparagraph")
+
+element.onclick = function()
+{
+    alert ("I have been clicked upon")
+}
+
+element.onclick = function()
+{
+    alert ("Second event handler")
+}
+
+element.addEventListener("click", function()
+{
+    alert ("I have been clicked upon")
+})
+
+element.addEventListener("click", function()
+{
+    alert ("Second event handler")
+})
+
+*/
