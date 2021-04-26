@@ -8,7 +8,7 @@
  */
 export default class Picture {
 
-    constructor (poinamepoi, cityname, link)   
+    constructor (poiname, cityname, link)   
     {
      this.poiname = poiname
      this.cityname = cityname
