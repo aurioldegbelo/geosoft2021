@@ -15,7 +15,7 @@ Brandenburger Tor, Berlin, Coordinates (long/lat): [13.377722, 52.516272], <a hr
 
 <div id="nearbyButton">
   <h1>Nearby Places</h1>
-  <button type="button" onclick="loadNearbyPlaces()">Show Nearby Places</button>
+  <button type="button" onclick="loadPlacesPromises()">Show Nearby Places</button>
 </div>
 
 <script>
@@ -94,7 +94,7 @@ function showNearbyPlaces(nbplaces)
 
 let p = new Promise ((resolve, reject) =>
 {
-    let success = false
+    let success = true
     if (success)
     {
       resolve ("operation successful")
@@ -112,6 +112,9 @@ p.then((message) => {
 
   console.log(message)
 })
+
+//console.dir(window.navigator)
+//console.dir(window.name)
 </script>
 
 </body>

@@ -125,18 +125,6 @@ setInterval(pod(cast), 5000)
 
 setTimeout(pod(cast), 5000)
 
-let xhttp = new XMLHttpRequest()
-  xhttp.onreadystatechange = function() 
-  {
-    if (this.readyState == 4 && this.status == 200) 
-    {
-      
-      console.log(this.responseText)
-    }
-  }
-  xhttp.open("GET", "https://places.ls.hereapi.com/places/v1/discover/explore?at=52.5159%2C13.3777&cat=sights-museums&apiKey=H6XyiCT0w1t9GgTjqhRXxDMrVj9h78ya3NuxlwM7XUs", true);
-  xhttp.send()
-
 
 // Hello
 
