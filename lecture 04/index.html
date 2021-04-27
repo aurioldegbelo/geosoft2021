@@ -7,32 +7,74 @@
     <title>My Digital Photo Organizer</title>
 </head>
 <body>
+
 <div id="demo">
-<h1>Nearby Places</h1>
-<button type="button" onclick="loadNearbyPlaces()">Show Nearby Places</button>
+<img src="brandenburg_gate.jpg"> <br>
+Brandenburger Tor, Berlin, Coordinates (long/lat): [13.377722, 52.516272], <a href = "https://flic.kr/p/Fx7s3D" >link</a>
+
+</div>
+
+<div id="nearbyButton">
+  <h1>Nearby Places</h1>
+  <button type="button" onclick="loadPlacesPromises()">Show Nearby Places</button>
 </div>
 
 <script>
 "use strict" 
-function loadNearbyPlaces() {
+let picturediv = document.getElementById("demo")
+let buttondiv = document.getElementById("nearbyButton")
+
+function loadNearbyPlaces() 
+{
   let xhttp = new XMLHttpRequest()
   xhttp.onreadystatechange = function() 
   {
     if (this.readyState == 4 && this.status == 200) 
     {
         let res = JSON.parse(this.responseText)
-        nearbyPlaces = res.results.items
-        showNearbyPlaces(nearbyPlaces)
+        showNearbyPlaces(res.results.items)
     }
   }
-  xhttp.open("GET", "https://places.ls.hereapi.com/places/v1/discover/explore?at=52.5159%2C13.3777&cat=sights-museums&apiKey=GV8GJv1svluImsIjkd3b94taT_9L0W-xTVqfiERVwDo", true)
-  xhttp.send()
+
+  // https://developer.here.com/documentation/examples/rest/places/explore-popular-places-category
+
+
 }
+
+
+function loadPlacesPromises()
+{
+   let xhttp = new XMLHttpRequest()
+   xhttp.open("GET", 
+  "https://places.ls.hereapi.com/places/v1/discover/explore?at=52.516272%2C13.377722&cat=sights-museums&apiKey=GV8GJv1svluImsIjkd3b94taT_9L0W-xTVqfiERVwDo"
+  , true)
+   xhttp.send()
+
+    let p = new Promise ((resolve, reject) => 
+    {
+
+
+    })
+
+}
+
+
+
+
 
 
 function showNearbyPlaces(nbplaces)
 {
+  buttondiv.style.display = "none"
   console.log(nbplaces)
+  picturediv.append(document.createElement("br"), document.createElement("br"),
+   "List of nearby places, with their distance" , document.createElement("br"), document.createElement("br"))
+  let nbplace
+  for (const element of nbplaces) 
+  {
+    nbplace = element.title + ", " + element.distance + " meters"
+    picturediv.append(nbplace, document.createElement("br"))
+   }
 }
 </script>
 
