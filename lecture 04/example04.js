@@ -125,19 +125,27 @@ setInterval(pod(cast), 5000)
 
 setTimeout(pod(cast), 5000)
 
+const test = async () => {
 
+
+    const data = await random()
+    console.log(data) 
+}
 // Hello
 
 // Showing the picture undefined
 
-/*
-for (let e in array)
+
+var array = "End of podcast"
+
+for (let e in array) // for...in
 {
     process.stdout.write(array[e]+ " ")
 }
 process.stdout.write("\n")
 
 
+/*
 console.dir(window.navigator);
 
 console.log(window.screenX + ", " + window.screenY);
