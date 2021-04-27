@@ -78,13 +78,14 @@ let pic2  = {
     url: "https://flic.kr/p/4kbwjN",
     show: () =>  
     {
-        console.log(this)
+        console.log(this) //Window {window: Window, self: Window}
         console.log(`Showing the picture ${this.poiname}`)
     }
 }
 
 pic2.show()
 
+// class
 class Picture {
 
     constructor (poiname, cityname, link)   
@@ -107,6 +108,7 @@ class Picture {
 
 Picture.hello()
 
+// instance
 const pic1 = new Picture1("Prinzipalmarkt", "Münster", "https://flic.kr/p/4kbwjN")
 pic1.show()
 
