@@ -133,10 +133,6 @@ const test = async () => {
     const data = await random()
     console.log(data) 
 }
-// Hello
-
-// Showing the picture undefined
-
 
 var array = "End of podcast"
 
