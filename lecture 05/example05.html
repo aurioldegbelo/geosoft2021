@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Photo Organizer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+</head>
+<body>
+    <br>
+    <!-- Div for the autocomplete input field -->
+    <div class="ui-widget">
+        <label for="pictures">Pictures: </label>
+        <input id="pictures">
+
+        <p id= "information">
+        </p>
+    </div>
+
+    <!-- Div to show the map -->
+    <div id="myfirstmap">
+
+
+    </div>
+
+    <script>
+
+    // geojson file about the pictures
+    let geojson = { "type": "FeatureCollection",
+"features": [
+  { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [7.628056, 51.962222]},
+    "properties": {
+      "poiname": "Prinzipalmarkt",
+      "cityname": "Münster", 
+      "link": "https://flic.kr/p/4kbwjN" }
+  },
+  { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [7.596000123049237, 51.96910828669141]},
+    "properties": {
+      "poiname": "GEO1",
+         "cityname": "Münster", 
+      "link": "http://geomundus.org/2014/images/geo2.jpg"  }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [7.6131, 51.9637]},
+  "properties": {
+    "poiname": "Fürstbischöfliches Schloss",
+    "cityname": "Münster", 
+    "link": "https://flic.kr/p/2jaqZrE"      }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [13.74, 51.05]},
+  "properties": {
+    "poiname": "Dresden",
+    "cityname": "Dresden", 
+    "link": "https://flic.kr/p/xFLCa1"      }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [9.966111, 53.546111]},
+  "properties": {
+    "poiname": "Hamburger Hafen",
+    "cityname": "Hamburg", 
+    "link": "https://flic.kr/p/ugwtqM"      }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [9.7375, 52.367222]},
+  "properties": {
+    "poiname": "Neues Rathaus",
+    "cityname": "Hannover", 
+    "link": "https://flic.kr/p/Lewsk8"      }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [13.377722, 52.516272]},
+  "properties": {
+    "poiname": "Brandenburger Tor",
+    "cityname": "Berlin", 
+    "link": "https://flic.kr/p/Fx7s3D"      }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [6.783333, 51.233333]},
+  "properties": {
+   "poiname": "Düsseldorf",
+   "cityname": "Düsseldorf", 
+   "link": " https://flic.kr/p/7nTYJg"  }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [8.684444, 50.113611]},
+  "properties": {
+  "poiname": "Frankfurt Altstadt",
+  "cityname": "Frankfurt am Main", 
+  "link": "https://flic.kr/p/2izHsWG" }
+  },
+  { "type": "Feature",
+  "geometry": {"type": "Point", "coordinates": [11.578947, 48.14065]},
+  "properties": {
+    "poiname": "Antiquarium",
+    "cityname": "München", 
+    "link": "https://flic.kr/p/2axWda3"      }
+  }
+  ]
+}
+    
+    // retrieve the pictures
+    let pictures = geojson.features
+    
+    // retrieve the poinames
+    let poinames = pictures.map(function(el)
+    {
+        return el.properties.poiname
+    })
+
+    // autocomplete
+    $( "#pictures" ).autocomplete
+    ({
+        minLength: 2, // start after 2 characters
+        source: poinames, // take the poinames as source
+        select: function( event, ui ) 
+        {
+            let details = pictures.filter(function (el) 
+            {
+                // return the only object for which the poiname matches the selection
+                 return el.properties.poiname === ui.item.value 
+            })
+
+            // show the details as a JSON text
+            showDetailsAsJSON(details)
+            
+            // show the details on a leaflet map 
+            showDetailsOnMap (details)
+
+            return false
+        }
+    })
+
+    
+    function showDetailsAsJSON(details)
+    {
+        let text = JSON.stringify(details[0].properties, null,'\t')  
+        document.getElementById("information").innerHTML = text
+           
+    }
+
+    function showDetailsOnMap(details)
+    {
+        console.log(details[0])    
+
+    }
+
+    </script>
+       
+</body>
+</html>
