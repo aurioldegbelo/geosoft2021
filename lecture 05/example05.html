@@ -17,6 +17,7 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
     <link rel="stylesheet" href="map.css">
+    <!-- Loading the API Key -->
     <script src="apiKeys.js"></script>
 </head>
 <body>
@@ -183,7 +184,7 @@
         // geojson uses long/lat as ordering
         let [long, lat]= currentpoi.geometry.coordinates
         
-        if (mymap != undefined) {mymap.remove() }
+        if (mymap != undefined || mymap != null) {mymap.remove() }
   
         // initialize the map
         mymap = L.map('myfirstmap').setView([lat, long], 13) // leaflet uses lat/long
