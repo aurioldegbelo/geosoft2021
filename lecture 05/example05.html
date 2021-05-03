@@ -29,7 +29,9 @@
         <p id= "information">
         </p>
     </div>
-
+    <br>
+    <br>
+    <br>
     <!-- Div to show the map -->
     <div id="myfirstmap">
 
@@ -144,11 +146,14 @@
         source: poinames, // take the poinames as source
         select: function( event, ui ) 
         {
+            this.value = ui.item.value // update the value of the current field with the value of the selected element
+
             let details = pictures.filter(function (el) 
             {
                 // return the only object for which the poiname matches the selection
                  return el.properties.poiname === ui.item.value 
             })
+
 
             // show the details as a JSON text
             showDetailsAsJSON(details)
