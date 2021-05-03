@@ -7,12 +7,13 @@
     <title>Document</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="apiKeys.js"></script>
 </head>
 <body>
     <!-- A simple example to create a map, not based on Leaflet, but on MapBox GL -->
     <div id='map' style='width: 800px; height: 400px;'></div>
     <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYWRlZ2JlbG8iLCJhIjoiY2tvN2k0M2JzMGJkNjJ1bXEwODR0dTN0MiJ9.yZXdg9B0B1BWs_7ru4JqOA';
+    mapboxgl.accessToken = myMapBoxKey;
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
