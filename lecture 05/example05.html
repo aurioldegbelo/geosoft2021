@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+    <link rel="stylesheet" href="map.css">
 </head>
 <body>
     <br>
@@ -37,81 +38,95 @@
     <script>
 
     // geojson file about the pictures
-    let geojson = { "type": "FeatureCollection",
+    let geojson = 
+
+    { "type": "FeatureCollection",
 "features": [
   { "type": "Feature",
     "geometry": {"type": "Point", "coordinates": [7.628056, 51.962222]},
     "properties": {
       "poiname": "Prinzipalmarkt",
       "cityname": "Münster", 
-      "link": "https://flic.kr/p/4kbwjN" }
+      "link": "https://flic.kr/p/4kbwjN", 
+      "link2": "https://live.staticflickr.com/2288/2186136858_214f8685f2_n.jpg" }
   },
   { "type": "Feature",
     "geometry": {"type": "Point", "coordinates": [7.596000123049237, 51.96910828669141]},
     "properties": {
       "poiname": "GEO1",
-         "cityname": "Münster", 
-      "link": "http://geomundus.org/2014/images/geo2.jpg"  }
+      "cityname": "Münster", 
+      "link": "http://geomundus.org/2014/images/geo2.jpg", 
+       "link2": "http://geomundus.org/2014/images/geo2.jpg"  }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [7.6131, 51.9637]},
   "properties": {
     "poiname": "Fürstbischöfliches Schloss",
     "cityname": "Münster", 
-    "link": "https://flic.kr/p/2jaqZrE"      }
+    "link": "https://flic.kr/p/2jaqZrE" , 
+       "link2": "https://live.staticflickr.com/65535/49989838756_4f282a4874_n.jpg"     }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [13.74, 51.05]},
   "properties": {
     "poiname": "Dresden",
     "cityname": "Dresden", 
-    "link": "https://flic.kr/p/xFLCa1"      }
+    "link": "https://flic.kr/p/xFLCa1", 
+       "link2": "https://live.staticflickr.com/5784/20797109706_4926e40352_n.jpg"      }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [9.966111, 53.546111]},
   "properties": {
     "poiname": "Hamburger Hafen",
     "cityname": "Hamburg", 
-    "link": "https://flic.kr/p/ugwtqM"      }
+    "link": "https://flic.kr/p/ugwtqM" , 
+    "link2": "https://live.staticflickr.com/520/18553682569_e69b6bae80_n.jpg"     }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [9.7375, 52.367222]},
   "properties": {
     "poiname": "Neues Rathaus",
     "cityname": "Hannover", 
-    "link": "https://flic.kr/p/Lewsk8"      }
+    "link": "https://flic.kr/p/Lewsk8", 
+    "link2": "https://live.staticflickr.com/8195/29032754173_b6cc777166_n.jpg"      }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [13.377722, 52.516272]},
   "properties": {
     "poiname": "Brandenburger Tor",
     "cityname": "Berlin", 
-    "link": "https://flic.kr/p/Fx7s3D"      }
+    "link": "https://flic.kr/p/Fx7s3D" , 
+       "link2": "https://live.staticflickr.com/811/25949983617_3e2959a8e9_n.jpg"     }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [6.783333, 51.233333]},
   "properties": {
    "poiname": "Düsseldorf",
    "cityname": "Düsseldorf", 
-   "link": " https://flic.kr/p/7nTYJg"  }
+   "link": "https://flic.kr/p/7nTYJg", 
+       "link2": "https://live.staticflickr.com/2687/4185928571_946dee0f20_n.jpg"  }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [8.684444, 50.113611]},
   "properties": {
   "poiname": "Frankfurt Altstadt",
   "cityname": "Frankfurt am Main", 
-  "link": "https://flic.kr/p/2izHsWG" }
+  "link": "https://flic.kr/p/2izHsWG", 
+   "link2": "https://live.staticflickr.com/65535/49608292196_e66a29859a_n.jpg" }
   },
   { "type": "Feature",
   "geometry": {"type": "Point", "coordinates": [11.578947, 48.14065]},
   "properties": {
     "poiname": "Antiquarium",
     "cityname": "München", 
-    "link": "https://flic.kr/p/2axWda3"      }
+    "link": "https://flic.kr/p/2axWda3", 
+       "link2": "https://live.staticflickr.com/65535/44337291772_f78486053b_n.jpg"      }
   }
   ]
 }
-    
+    // create a variable for the map
+    let mymap
+
     // retrieve the pictures
     let pictures = geojson.features
     
@@ -147,34 +162,45 @@
     
     function showDetailsAsJSON(details)
     {
-        let text = JSON.stringify(details[0].properties, null,'\t')  
-        document.getElementById("information").innerHTML = "The current selection is:  <br> <br>"+ text
+        let text = `The current selection is: <br> <br> POI Name: ${details[0].properties.poiname}, City Name:  ${details[0].properties.cityname}, Link:  <a href=" ${details[0].properties.link}"> ${details[0].properties.link}</a> `   
+        console.log(text)
+        // pass the information about the current poi to the HTML information element
+        document.getElementById("information").innerHTML = text
            
     }
 
     function showDetailsOnMap(details)
     {
+        // get the current poi
+        let currentpoi = details[0]
+
+        // geojson uses long/lat as ordering
+        let [long, lat]= currentpoi.geometry.coordinates
+        
+        if (mymap != undefined) {mymap.remove() }
+  
         // initialize the map
-        var mymap = L.map('myfirstmap').setView([51.505, -0.09], 13);
+        mymap = L.map('myfirstmap').setView([lat, long], 13) // leaflet uses lat/long
 
         // add the base map
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWRlZ2JlbG8iLCJhIjoiY2tvN2k0M2JzMGJkNjJ1bXEwODR0dTN0MiJ9.yZXdg9B0B1BWs_7ru4JqOA', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
+            accessToken: 'pk.eyJ1IjoiYWRlZ2JlbG8iLCJhIjoiY2tvN2k0M2JzMGJkNjJ1bXEwODR0dTN0MiJ9.yZXdg9B0B1BWs_7ru4JqOA'
+        }).addTo(mymap)
         
-        // add the geojson about the selected map to the current map
-        L.geoJSON(details[0].properties).addTo(mymap);
-
+        // add a marker
+        var marker = L.marker([lat, long]).addTo(mymap)
+        let text = `<a href="${currentpoi.properties.link}"><img src="${currentpoi.properties.link2}" width="320" height="175"></a>`
         
-        console.log(details[0])    
-
+        // add the picture to the current popup
+        console.log(text)
+        marker.bindPopup(text).openPopup()
+      
     }
-
     </script>
        
 </body>

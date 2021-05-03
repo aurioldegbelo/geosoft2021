@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <!-- A simple example to create a map, not based on Leaflet, but on MapBox GL -->
+    <div id='map' style='width: 800px; height: 400px;'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYWRlZ2JlbG8iLCJhIjoiY2tvN2k0M2JzMGJkNjJ1bXEwODR0dTN0MiJ9.yZXdg9B0B1BWs_7ru4JqOA';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+    });
+    </script>
+    <a href="https://www.flickr.com/photos/kimberlykv/20797109706/" title="Dresden">
+    <img src="https://live.staticflickr.com/5784/20797109706_7154c316a4_6k.jpg" width="320" height="113" alt="Dresden"></a>
+</body>
+</html>

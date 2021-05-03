@@ -23,7 +23,7 @@ uploadfield.addEventListener('change', function(){
     // event listener, if the reader has read the file
     reader.addEventListener('load', function() {
         
-        var result = JSON.parse(reader.result); // parse the result into a JSON object (no error checking at this point) 
+        var result = JSON.parse(reader.result) // parse the result into a JSON object (no error checking at this point) 
         
         let n = countPictures(result)
         console.log(`The number of pictures is ${n}`)
