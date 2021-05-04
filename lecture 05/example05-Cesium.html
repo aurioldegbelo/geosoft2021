@@ -5,11 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Digital Photo Organizer</title>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
      <!-- Include the CesiumJS JavaScript and CSS files -->
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.80/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.80/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-      
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #top1 {
+            text-align: center;
+            width: 100%;
+            height: 8%;
+            float: left;
+        }
+
+        #bottom2 {
+
+            width: 99%;
+            height: 500px;
+        }
+    </style>
+
 </head>
 <body>
     <!-- See https://cesium.com/docs/tutorials/quick-start/ -->
@@ -111,15 +135,10 @@
 ]
 }
 
-    var dataSource = Cesium.GeoJsonDataSource.load(geojson,      
-    {
-        stroke: Cesium.Color.HOTPINK,
-        fill: Cesium.Color.PINK.withAlpha(0.5),
-        strokeWidth: 3,
-      })
-
+    var dataSource = Cesium.GeoJsonDataSource.load(geojson)
     viewer.dataSources.add(dataSource)
     viewer.zoomTo(dataSource)
+
     </script>
 
 </body>
