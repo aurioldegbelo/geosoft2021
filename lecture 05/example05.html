@@ -138,14 +138,14 @@
 
     // retrieve the pictures
     let pictures = geojson.features
-   // console.log(pictures)
+    //console.log(pictures)
 
     // retrieve the poinames
     let poinames = pictures.map(function(el)
     {
         return el.properties.poiname
     })
-   // console.log(poinames)
+    //console.log(poinames)
 
     // autocomplete
     $( "#pictures" ).autocomplete
