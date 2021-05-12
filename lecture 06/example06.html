@@ -229,6 +229,7 @@
         nearbyPlaces(details[0]).then (result => 
         {
           cardbody.children[2].innerHTML = result
+          console.trace("I am doing a test")
         })
         // link
         cardbody.children[3].href = details[0].properties.link

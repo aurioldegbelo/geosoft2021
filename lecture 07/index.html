@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Browser Storage Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.2">
+</head>
+<body>
+
+<p> No content. The page is just used to show the effect of using storage functions in JavaScript. The example is adapted from 
+    <a href="https://youtu.be/GihQAC1I39Q">this Youtube tutorial.</a> </p>
+
+<script>
+// local storage
+localStorage.setItem('podcast-ls', '06')
+console.log(`Local storage storage: ${localStorage.getItem('podcast-ls')}`)
+//localStorage.clear()
+
+// session storage
+sessionStorage.setItem('podcast-ss', '06')
+console.log(`Session storage: ${sessionStorage.getItem('podcast-ss')}`)
+//sessionStorage.clear()
+
+// cookies
+document.cookie = 'podcast=06; expires='+ new Date(9999, 0, 1).toUTCString()
+console.log(document.cookie)
+
+</script>
+</body>
+</html>
