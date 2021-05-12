@@ -1,8 +1,9 @@
+/* css property to customize the navbar */
 .navbar-custom {
     background-color: black;
 }
 
-/* */
+/* css for the leaflet map */
 #myfirstmap 
 { 
     height: 400px; 
