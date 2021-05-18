@@ -18,15 +18,16 @@ console.log(`Local storage storage: ${localStorage.getItem('podcast-ls')}`)
 //localStorage.clear()
 
 // session storage
-//sessionStorage.setItem('podcast-ss', '06')
+//sessionStorage.setItem('podcast-ss', '07')
 console.log(`Session storage: ${sessionStorage.getItem('podcast-ss')}`)
 //sessionStorage.clear()
 
 // cookies
-//document.cookie = 'podcast=06; expires='+ new Date(9999, 0, 1).toUTCString()
+document.cookie = 'podcast=07-1; expires='+ new Date(9999, 0, 1).toUTCString()
 //document.cookie = 'podcast=07; expires='+ new Date('2021-05-17T11:35:00').toUTCString()
-console.log(document.cookie)
-
+//console.log(document.cookie)
+let a = decodeURIComponent(document.cookie)
+console.dir(a)
 </script>
 </body>
 </html>
