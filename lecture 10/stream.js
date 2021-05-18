@@ -4,6 +4,10 @@ let fs = require("fs")
 let host = "localhost"
 let port = "5000"
 
+console.log(process.argv)
+console.log(process.env)
+alert("Hello, I am a popup")
+
 http.createServer(function (req, res){
 
  
