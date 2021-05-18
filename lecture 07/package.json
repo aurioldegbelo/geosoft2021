@@ -4,12 +4,12 @@
   "description": "This is my first package",
   "main": "demoserver.js",
   "scripts": {
-    "test": "node storageserver.js",
+    "test": "node storageserver.js", 
     "start": "node demoserver.js"
   },
   "keywords": [
     "101",
-    "firstpackage"
+    "\"myfirstpackage\""
   ],
   "author": "Auriol Degbelo",
   "license": "ISC",

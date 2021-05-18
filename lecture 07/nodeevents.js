@@ -1,3 +1,4 @@
+/*
 const EventEmitter = require('events')
 
 class MyEmitter extends EventEmitter {} // new class inherits from EventEmittler
@@ -9,7 +10,7 @@ myEmitter.on('event', () => { // what happens when the event is fired
 })
 
 myEmitter.emit('event') // fire the event
-
+*/
 
 // extra lines to illustrate the use of modules in Node.js
 let mod = require('./moduleExample.js') // import the module
