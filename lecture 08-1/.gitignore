@@ -1,4 +1,4 @@
 # https://www.pluralsight.com/guides/how-to-use-gitignore-file
 
-public/apiKeys.js
+apiKeys.js
 node_modules/
