@@ -1,3 +1,5 @@
+// template to add to and retrieve documents from a MongoDB database
+
 const MongoClient = require('mongodb').MongoClient
 const assert = require('assert')
 
@@ -47,15 +49,16 @@ client.connect(function(err)
   // insert new documents in my collection
   insertDocuments(db, collection, data, function()
   {
-    console.log("Closing the client...")
-    client.close()
+    console.log("Insertion operation done")
+    //client.close()
   })
 
-  // count the total number of elements in my collection
-  collection.count(function (err, count) {
-    if (err) throw err;
-    
-    console.log('Total Rows: ' + count);
+  countRows (collection)
+
+  findDocuments(db, collection, function()
+  {
+    console.log("Closing the client...")
+    client.close()
   })
 
 })
@@ -72,4 +75,31 @@ const insertDocuments = function(db, collection, data, callback)
       console.log(`Inserted ${result.insertedCount} documents into the collection`)
       callback(result)
     })
+}
+
+// find all documents in a collection
+const findDocuments = function(db, collection, callback) 
+{
+
+    // Find some documents
+    collection.find({}).toArray(function(err, docs) 
+    {
+      assert.equal(err, null);
+      console.log('Found the following records');
+      console.log(docs);
+      callback(docs)
+    })
+  }
+
+// count the number of rows in a collection
+const countRows = function(collection)
+{
+    // count the total number of elements in my collection
+    collection.count(function (err, count) 
+    {
+        if (err) throw err
+    
+        console.log('Total Rows: ' + count)
+    })
+
 }
