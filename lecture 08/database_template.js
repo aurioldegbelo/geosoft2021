@@ -1,5 +1,4 @@
 // template to add to and retrieve documents from a MongoDB database
-
 const MongoClient = require('mongodb').MongoClient
 const assert = require('assert')
 
