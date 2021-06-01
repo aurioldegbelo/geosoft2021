@@ -27,9 +27,8 @@ router.get('/', function(req, res, next)
     collection.find({}).toArray(function(err, docs) 
     {
       assert.equal(err, null);
-      console.log('Found the following records');
-      console.log(docs[0].features)
-
+      console.log('Found the following records...');
+      //console.log(docs[0].features)
       res.render('1_search', { title: 'Search Page', data: docs[0].features });
 
     })
@@ -37,7 +36,5 @@ router.get('/', function(req, res, next)
   })
 
 });
-
-
 
 module.exports = router;

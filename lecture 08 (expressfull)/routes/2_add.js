@@ -6,4 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('2_add', { title: 'Add Page' });
 });
 
+router.post('/newpoi', function(req, res, next) 
+{
+  console.log("A new poi has been added")
+  //res.render('2_add', { title: 'Add Page' });
+});
+
+
 module.exports = router;
