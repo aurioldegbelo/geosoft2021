@@ -1,5 +1,6 @@
 "use strict"
 
+/*
 // geojson file about the pictures
 let geojson =
 
@@ -108,12 +109,14 @@ let geojson =
         }
     ]
 }
+*/
+console.log(geojson)
 
 // create a variable for the map
 let mymap
 
 // retrieve the pictures
-let pictures = geojson.features
+let pictures = geojson
 //console.log(pictures)
 
 // retrieve the poinames

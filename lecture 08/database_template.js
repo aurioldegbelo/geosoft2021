@@ -89,7 +89,7 @@ const findDocuments = function(db, collection, callback)
       console.log(docs);
       callback(docs)
     })
-  }
+}
 
 // count the number of rows in a collection
 const countRows = function(collection)

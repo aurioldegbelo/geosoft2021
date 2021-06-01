@@ -12,7 +12,6 @@ var searchRouter = require('./routes/1_search.js');
 var addRouter = require('./routes/2_add.js');
 var homeRouter = require('./routes/3_home.js');
 
-
 var app = express();
 
 // view engine setup
@@ -31,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // adding my custom routes
 app.use('/', homeRouter);
+app.use('/home', homeRouter);
 app.use('/search', searchRouter);
 app.use('/add', addRouter);
 

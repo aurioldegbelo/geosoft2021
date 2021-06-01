@@ -22,3 +22,8 @@ block content
     .container.col-sm-6
       // Div to show the map
       #myfirstmap
+  script.
+    let geojson = !{JSON.stringify(data)}
+    //console.log(geojson)
+  block scripts
+    script(src='/javascripts/searchUtilities.js')
