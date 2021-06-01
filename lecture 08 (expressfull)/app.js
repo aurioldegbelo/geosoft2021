@@ -24,9 +24,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Here we are configuring express to use body-parser as middle-ware.
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
+
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-
 
 // adding my custom routes
 app.use('/', homeRouter);

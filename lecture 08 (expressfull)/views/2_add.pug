@@ -9,20 +9,20 @@ block content
       .form-group.row
         label.col-sm-1.col-form-label(for='poiname') POI Name
         .col-sm-4
-          input#poiname.form-control(type='text' placeholder='Enter POI Name')
+          input#poiname.form-control(type='text' name="pname" placeholder='Enter POI Name')
       .form-group.row
         label.col-sm-1.col-form-label(for='cityname') City Name
         .col-sm-4
-          input#cityname.form-control(type='text' placeholder='Enter City Name')
+          input#cityname.form-control(type='text' name="cname" placeholder='Enter City Name')
       .form-group.row
         label.col-sm-1.col-form-label(for='coordinates') Coordinates
         .col-sm-4
-          input#coordinates.form-control(type='text' aria-describedby='coordinatesHelp' placeholder='Enter Coordinates')
+          input#coordinates.form-control(type='text' aria-describedby='coordinatesHelp' name="longlat" placeholder='Enter Coordinates')
           small#coordinatesHelp.form-text.text-muted Coordinates should follow the long/lat order.
       .form-group.row
         label.col-sm-1.col-form-label(for='picturelink') Link
         .col-sm-4
-          input#picturelink.form-control(type='url' placeholder='Enter link to the picture')
+          input#picturelink.form-control(type='url' name="picurl" placeholder='Enter link to the picture')
       button.btn.btn-primary.mb-2(type='submit') Send
 
 
