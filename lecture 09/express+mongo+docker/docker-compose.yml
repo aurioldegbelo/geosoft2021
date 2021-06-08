@@ -1,9 +1,9 @@
+# yaml template to dockerise a node.js app
 version: '3'
 services: 
     appservice: 
-        container_name: nodeapp
-        restart: always
-        build: . 
+        container_name: mynodeapp
+        image: aurioldegbelo/myfotoapp
         ports: 
             - '5000:3000'
         depends_on: 
