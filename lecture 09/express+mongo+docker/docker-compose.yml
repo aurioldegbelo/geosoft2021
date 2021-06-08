@@ -1,4 +1,4 @@
-# yaml template to dockerise a node.js app
+# yml template to dockerise a node.js app
 version: '3'
 services: 
     appservice: 
@@ -9,7 +9,7 @@ services:
         depends_on: 
             - mongoservice
     mongoservice:
-        container_name: mongo
+        container_name: mymongodb
         image: mongo
         ports:
             - '27017:27017'
