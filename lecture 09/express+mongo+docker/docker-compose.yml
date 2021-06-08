@@ -1,0 +1,20 @@
+version: '3'
+services: 
+    appservice: 
+        container_name: nodeapp
+        restart: always
+        build: . 
+        ports: 
+            - '5000:3000'
+        depends_on: 
+            - mongoservice
+    mongoservice:
+        container_name: mongo
+        image: mongo
+        ports:
+            - '27017:27017'
+    mongoexpressservice: 
+        image: mongo-express
+        ports: 
+            - '8081:8081'
+ 

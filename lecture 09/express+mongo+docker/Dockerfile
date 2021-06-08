@@ -13,6 +13,5 @@ RUN npm install
 EXPOSE 3000
 
 # Start app
-CMD node server.js
-
+CMD node serveranddb.js
 
