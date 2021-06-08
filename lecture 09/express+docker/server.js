@@ -13,7 +13,6 @@ app.get('/', (req, res) =>
 //app.use('/static', express.static('public'))
 //app.use('/static', express.static(path.join(__dirname, 'public')))
 
-
 app.listen(port, () => 
 {
   console.log(`App listening at http://localhost:${port}`)

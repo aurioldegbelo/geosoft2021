@@ -3,8 +3,8 @@ version: '3'
 services: 
     appservice: 
         container_name: mynodeapp
-        # build: .
-        image: aurioldegbelo/myfotoapp
+        build: .
+        #image: aurioldegbelo/myfotoapp
         ports: 
             - '4000:3000'
         depends_on: 
@@ -14,3 +14,7 @@ services:
         image: mongo
         ports:
             - '27017:27017'
+    mongoexpressservice: 
+        image: mongo-express
+        ports: 
+            - '8081:8081'

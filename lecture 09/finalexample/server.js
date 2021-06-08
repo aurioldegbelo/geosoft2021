@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 
 // listen on port 5000 for connections
-var port = 5000;
+var port = 3000;
 
 var server = app.listen(port);
 
