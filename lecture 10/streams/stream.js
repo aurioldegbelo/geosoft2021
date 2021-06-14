@@ -6,7 +6,7 @@ let port = "5000"
 
 console.log(process.argv)
 console.log(process.env)
-alert("Hello, I am a popup")
+//alert("Hello, I am a popup")
 
 http.createServer(function (req, res){
 
@@ -22,7 +22,7 @@ http.createServer(function (req, res){
     })
    /* */
    /*
-   // steam: see the progression of the data
+   // stream: see the progression of the data
    fs.stat ('Wildlife_final.mp4', (err, stat) => {
 
       res.writeHead(200, {'Content-Type':'text/plain'}) 
