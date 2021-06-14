@@ -30,7 +30,7 @@ $.ajax({
   type: method,
   url: "http://localhost:4000/echo.html",
   contentType: "application/json",
-//  data: JSON.stringify(loc),
+  //data: JSON.stringify(loc),
   dataType: "json",  
   success: (response) => {$("#content-cors").text("Response: " + JSON.stringify(response, null, 2));},
   error: (error) => {$("#content-cors").text("Error: " + JSON.stringify(error, null, 2));},
