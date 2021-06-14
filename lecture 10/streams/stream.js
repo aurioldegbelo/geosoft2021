@@ -4,28 +4,30 @@ let fs = require("fs")
 let host = "localhost"
 let port = "5000"
 
-console.log(process.argv)
-console.log(process.env)
+//console.log(process.argv)
+//console.log(process.env)
 //alert("Hello, I am a popup")
 
 http.createServer(function (req, res){
-
  
-    fs.readFile('Wildlife_final.mp4', function (err, data) 
-   {
-      if (err) return console.error(err)
-      console.log("Successful reading of my video file")
-      res.writeHead(200, {'Content-Type':'video/mp4'})
-      res.write(data)
-      res.end()
+    
+      fs.readFile('Test.mp4', function (err, data) 
+      {
+         if (err) return console.error(err)
+         console.log(data)
+         console.log("Successful reading of my video file")
+         res.writeHead(200, {'Content-Type':'video/mp4'})
+         res.write(data)
+         res.end()
 
-    })
-   /* */
-   /*
+      })
+   
+/*
+  
    // stream: see the progression of the data
    fs.stat ('Wildlife_final.mp4', (err, stat) => {
 
-      res.writeHead(200, {'Content-Type':'text/plain'}) 
+      res.writeHead(200, {'Content-Type':'video/mp4'}) 
       var totalfilesize = stat.size
       console.log (`The totalfilesize is: ${totalfilesize} bytes`)
       var progress = 0
@@ -40,10 +42,10 @@ http.createServer(function (req, res){
       })
 
    })
+  */
+   /*
 
- 
-
-  
+   
     // create a readable stream final example
     let rStream = fs.createReadStream('Wildlife_final.mp4')
     rStream.on('data', (chunk) => {
@@ -53,7 +55,10 @@ http.createServer(function (req, res){
    
    res.writeHead(200, {'Content-Type':'video/mp4'})
    rStream.pipe(res)  
+
   */
+
+
 
 
 }).listen(port, host)
