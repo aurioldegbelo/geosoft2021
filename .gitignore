@@ -1,2 +1,14 @@
 .vscode/launch.json
 lecture 10/streams/Test.mp4
+lecture 10/u-testing-server/coverage/clover.xml
+lecture 10/u-testing-server/coverage/coverage-final.json
+lecture 10/u-testing-server/coverage/lcov.info
+lecture 10/u-testing-server/coverage/lcov-report/base.css
+lecture 10/u-testing-server/coverage/lcov-report/block-navigation.js
+lecture 10/u-testing-server/coverage/lcov-report/favicon.png
+lecture 10/u-testing-server/coverage/lcov-report/index.html
+lecture 10/u-testing-server/coverage/lcov-report/prettify.css
+lecture 10/u-testing-server/coverage/lcov-report/prettify.js
+lecture 10/u-testing-server/coverage/lcov-report/server-code.js.html
+lecture 10/u-testing-server/coverage/lcov-report/sort-arrow-sprite.png
+lecture 10/u-testing-server/coverage/lcov-report/sorter.js
