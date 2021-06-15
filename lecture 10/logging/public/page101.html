@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 101 - Logging (JSNLog) </title>
+    <!--
+    <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/jsnlog/2.30.0/jsnlog.min.js"></script>
+    -->
+    <script src="jsnlog.js"></script>
+</head>
+
+<body>
+    <h2>I am a page to send logs from the client to the server. To access the original demos of JSNlog on 
+       Node.js, click <a href="https://github.com/mperdeck/jsnlog.NodeJsWorkingDemos">here</a> </h2>
+    <script>
+    // Log messages to both the console of the client (consoleAppender), and the server (Ajaxappender)
+    var consoleAppender=JL.createConsoleAppender('consoleAppender')
+    var ajaxAppender=JL.createAjaxAppender('ajaxAppender')
+    JL().setOptions({"appenders": [ajaxAppender, consoleAppender]})
+
+     /*
+    JL.setOptions({
+       // "defaultAjaxUrl": "/jsnlog/",
+        
+    });
+    */
+ 
+    JL("ClientToServerLogs").info("JSNLOG: This is an info message from the client to the server")
+    JL("ClientToServerLogs").debug("JSNLOG: This is a debug message from the client to the server")
+    JL("ClientToServerLogs").fatal("JSNLOG: This is a critical message from the client to the server")
+
+    let testObject = {"name":"unknown", "age": "unknown", "preferences": ["programming", "fitness", "travelling"]}
+    JL("ClientToServerLogs").log(2500, testObject) // see numeric severities at https://nodejs.jsnlog.com/Documentation/HowTo/NumericSeverities
+
+    </script>
+
+</body>
+</html>
