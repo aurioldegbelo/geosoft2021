@@ -228,3 +228,5 @@ function showDetailsOnMap(details) {
     marker.bindPopup(text).openPopup()
 
 }
+
+module.exports = nearbyPlaces

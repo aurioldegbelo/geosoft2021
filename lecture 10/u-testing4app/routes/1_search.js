@@ -12,7 +12,9 @@ const collectionName = 'pois' // collection name
 /* GET search page. */
 router.get('/', function(req, res, next) 
 {
-  
+  console.log("********************")
+ // console.log(req)
+  console.log(res.headersSent)
   // connect to the mongodb database and retrieve all docs
   client.connect(function(err) 
   {
