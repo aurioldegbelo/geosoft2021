@@ -46,9 +46,9 @@ app.post('*.logger', function (req, res)
     // Process incoming log messages, by handing to the server side jsnlog.
     // JL is the object that you got at
     // var JL = require('jsnlog').JL;
-    jsnlog_nodejs(JL, req.body)
+   // jsnlog_nodejs(JL, req.body)
 
-  //  console.log(req.body)
+    console.log(req.body)
  // JL("ServerLogs").info(req.body)
 
     // Send empty response. This is ok, because client side jsnlog does not use response from server.

@@ -45,7 +45,7 @@ app.get("/echo.html",  (req, res, next) => {
 
 })
 
-/*
+
  // Alternatively, enable pre-flight request for echo request only
  app.options('/echo.html', cors()) // enable pre-flight request for GET request
  app.get("/echo.html", cors(), function (req, res) 
@@ -55,6 +55,7 @@ app.get("/echo.html",  (req, res, next) => {
   res.json(loc)
 
  })
+ /*
 */
 
 

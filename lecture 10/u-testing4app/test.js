@@ -22,7 +22,7 @@ describe ("Route testing", () => // define a suite of tests
        const response = await got(urlSearch)   
      //  console.log(response.headers['content-type'])
       // expect(response.headers['content-type']).toBe("text/html; charset=utf-8")
-       expect(response.headers['content-type']).toBe("text/html")
+       expect(response.headers['content-type']).toBe("text/html; charset=utf-8")
 
    })
     

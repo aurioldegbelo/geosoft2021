@@ -10,8 +10,8 @@ let port = "5000"
 
 http.createServer(function (req, res){
  
-    
-      fs.readFile('Test.mp4', function (err, data) 
+    /*
+      fs.readFile('Wildlife_final.mp4', function (err, data) 
       {
          if (err) return console.error(err)
          console.log(data)
@@ -22,7 +22,7 @@ http.createServer(function (req, res){
 
       })
    
-/*
+*/
   
    // stream: see the progression of the data
    fs.stat ('Wildlife_final.mp4', (err, stat) => {
@@ -42,7 +42,7 @@ http.createServer(function (req, res){
       })
 
    })
-  */
+  /**/
    /*
 
    
