@@ -2,14 +2,9 @@
 // npm install --save-dev jest
 
 let got = require("got") // got is an alternative to request that is no longer maintained, see https://nodesource.com/blog/express-going-into-maintenance-mode
+let keys = require("./keys.js") // to load my keys
 let port = 4000
 
-//import A from '../public/javascripts/searchUtilities'
-const  {myHereAPIKey} = require("./public/javascripts/apiKeys.js")
-console.log(myHereAPIKey)
-
-
-//console.log(geojson)
 
 describe ("Route testing", () => // define a suite of tests
 {
@@ -33,7 +28,7 @@ describe ("Route testing", () => // define a suite of tests
     
     let urlAdd = `http://localhost:${port}/add/newpoi`
 
-    test("/add route: check request status", async () =>
+    test("/add route: check if post request is fine", async () =>
     {
        const request = await got.post(urlAdd)   
       // console.log(request.statusCode)
@@ -42,19 +37,22 @@ describe ("Route testing", () => // define a suite of tests
     
 })
 
-
 describe ("Place API Testing", () => {
 
-    let lat = 0
-    let long = 0
+    // put lat/long of Münster (or another place)
+    let lat = 51.9625
+    let long = 7.625556
 
     test ("API returns result", async() => {
 
-        let dataurl = `https://places.ls.hereapi.com/places/v1/discover/explore?at=${lat}%2C${long}&cat=sights-museums&apiKey=${myHereAPIKey}`
-        let res = await fetch(dataurl)
-        let data = await res.json()
+        let dataurl = `https://places.ls.hereapi.com/places/v1/discover/explore?at=${lat}%2C${long}&cat=sights-museums&apiKey=${keys.hereKey}`
+        let res = await got(dataurl)
+     //   console.log(res.statusCode)
+        expect(res.statusMessage).toBe("OK")   
 
     })
  
 
 })
+
+// to generate coverage file with jest: npm test -- --coverage
