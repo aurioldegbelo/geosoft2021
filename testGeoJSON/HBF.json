@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "HBF Muenster",
+        "URL": "https://en.wikipedia.org/wiki/M%C3%BCnster_Hauptbahnhof",
+        "Beschreibung": ""
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.636603116989136,
+              51.958309864086765
+            ],
+            [
+              7.635669708251953,
+              51.958243749228124
+            ],
+            [
+              7.634832859039307,
+              51.95579743091287
+            ],
+            [
+              7.635937929153442,
+              51.955089957220345
+            ],
+            [
+              7.636603116989136,
+              51.958309864086765
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
